@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "197392472681",
+    "project_id": "lifenote-a87e7",
+    "storage_bucket": "lifenote-a87e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197392472681:android:d0531cd9976d13b3d2a0f8",
+        "android_client_info": {
+          "package_name": "com.ppb.lifenote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197392472681-9q8vipsg0eg8v5itfv059nf942er7727.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPs-FabgndkQff4k1Y4LtmeFYPbpJQBGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197392472681-9q8vipsg0eg8v5itfv059nf942er7727.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197392472681:android:2acbcaf278ad95f0d2a0f8",
+        "android_client_info": {
+          "package_name": "com.ppb.praktikum1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197392472681-9q8vipsg0eg8v5itfv059nf942er7727.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPs-FabgndkQff4k1Y4LtmeFYPbpJQBGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197392472681-9q8vipsg0eg8v5itfv059nf942er7727.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
