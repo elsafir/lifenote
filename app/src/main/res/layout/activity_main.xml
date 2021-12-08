@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
         android:text="mulai bergabung"
+        android:id="@+id/btn_to_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
