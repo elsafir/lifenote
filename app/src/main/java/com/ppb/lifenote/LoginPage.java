@@ -33,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         toRegister = findViewById(R.id.btn_to_page_register);
-        etUsername = findViewById(R.id.et_username);
+        etUsername = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         progressBar = findViewById(R.id.progressbar_login);
         login = findViewById(R.id.btn_login);
