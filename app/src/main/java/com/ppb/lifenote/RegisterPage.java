@@ -23,9 +23,9 @@ public class RegisterPage extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
-    EditText etMail, etUsername, etPassword, etPassword2, etNamaLengkap, etNoHp, etTglLahir;
+    EditText etMail, etPassword, etPassword2, etNamaLengkap, etNoHp, etTglLahir;
     Button btnRegister;
-    String username, password, password2, nama, mail;
+    String password, password2, nama, mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,6 @@ public class RegisterPage extends AppCompatActivity {
         etNamaLengkap = findViewById(R.id.et_nama_lengkap);
         etNoHp = findViewById(R.id.et_no_hp);
         etTglLahir = findViewById(R.id.et_birth_date);
-        etUsername = findViewById(R.id.et_username);
         etPassword = findViewById(R.id.et_password);
         etPassword2 = findViewById(R.id.et_password2);
         progressBar = findViewById(R.id.progressBar);
@@ -63,7 +62,6 @@ public class RegisterPage extends AppCompatActivity {
 
                 nama = etNamaLengkap.getText().toString().trim();
                 mail = etMail.getText().toString().trim();
-                username = etUsername.getText().toString().trim();
                 password = etPassword.getText().toString().trim();
                 password2 = etPassword2.getText().toString().trim();
 
@@ -73,10 +71,6 @@ public class RegisterPage extends AppCompatActivity {
                 }
                 else if (TextUtils.isEmpty(mail)){
                     etMail.setError("Email wajib diisi");
-                    return;
-                }
-                else if (TextUtils.isEmpty(username)){
-                    etUsername.setError("Username wajib diisi");
                     return;
                 }
                 else if (TextUtils.isEmpty(password)){
@@ -99,7 +93,6 @@ public class RegisterPage extends AppCompatActivity {
 
     private void registrasi() {
         mail = etMail.getText().toString();
-        username = etUsername.getText().toString();
         password = etPassword.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(mail, password)
