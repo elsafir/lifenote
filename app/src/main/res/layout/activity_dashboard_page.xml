@@ -16,15 +16,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="This is Dashboard Page"
+                android:layout_marginBottom="20dp"
+                android:text="Masukkan Tahun"
                 android:textAlignment="center"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="255dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/custom2"
+                android:text="+"
+                app:cornerRadius="18dp" />
 
         </LinearLayout>
     </ScrollView>

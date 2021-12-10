@@ -11,4 +11,5 @@
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="custom1">#b3fef4</color>
+    <color name="custom2">#179283</color>
 </resources>
