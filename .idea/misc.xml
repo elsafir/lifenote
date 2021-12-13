@@ -3,17 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Dani/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_dashboard_page.xml" value="0.25" />
-        <entry key="..\:/Users/Dani/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_login_page.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/Dani/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Dani/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_profile_page.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/Dani/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_register_page.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/EL-SAFIR/Documents/GitHub/lifenote/app/src/main/res/layout/activity_main.xml" value="0.11005434782608696" />
-        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_dashboard_page.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/drawable/ic_baseline_post_add.xml" value="0.2203125" />
+        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_dashboard_page.xml" value="0.25" />
         <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_login_page.xml" value="0.25" />
         <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_profile_page.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_register_page.xml" value="0.5" />
+        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_register_page.xml" value="0.4004085801838611" />
+        <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/layout/activity_tambah_catatan.xml" value="0.33" />
         <entry key="..\:/Users/R30-c/AndroidStudioProjects/lifenote/app/src/main/res/menu/optionmenu.xml" value="0.20416666666666666" />
       </map>
     </option>
