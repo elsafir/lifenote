@@ -111,7 +111,7 @@ public class RegisterPage extends AppCompatActivity {
 //            startActivity(new Intent(RegisterPage.this, LoginPage.class));
 //            finish();
 //        }
-        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
+        dbRef = FirebaseDatabase.getInstance().getReference();
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,7 +165,7 @@ public class RegisterPage extends AppCompatActivity {
                             user.setEtNoHp(nohp);
                             user.setEtPassword(password);
 
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("User").child("test");
+                            dbRef = FirebaseDatabase.getInstance().getReference().child(mail.substring(0, mail.indexOf("@")));
                             dbRef.setValue(user);
 
                             Toast.makeText(RegisterPage.this, "Registration Succesfull", Toast.LENGTH_LONG).show();
