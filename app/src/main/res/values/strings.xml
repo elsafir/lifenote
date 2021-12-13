@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">lifenote</string>
+    <string name="masukkan_tahun">Masukkan Tahun</string>
+    <string name="s">+</string>
 </resources>

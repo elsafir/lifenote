@@ -18,14 +18,68 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterPage extends AppCompatActivity {
+    public class User{
+        private String etMail;
+        private String etNamaLengkap;
+        private String etTglLahir;
+        private String etNoHp;
+        private String etPassword;
+
+        public User(){
+        }
+
+        public String getEtMail() {
+            return etMail;
+        }
+
+        public String getEtNamaLengkap() {
+            return etNamaLengkap;
+        }
+
+        public String getEtTglLahir() {
+            return etTglLahir;
+        }
+
+        public String getEtNoHp() {
+            return etNoHp;
+        }
+
+        public String getEtPassword() {
+            return etPassword;
+        }
+
+        public void setEtMail(String etMail) {
+            this.etMail = etMail;
+        }
+
+        public void setEtNamaLengkap(String etNamaLengkap) {
+            this.etNamaLengkap = etNamaLengkap;
+        }
+
+        public void setEtNoHp(String etNoHp) {
+            this.etNoHp = etNoHp;
+        }
+
+        public void setEtTglLahir(String etTglLahir) {
+            this.etTglLahir = etTglLahir;
+        }
+
+        public void setEtPassword(String etPassword) {
+            this.etPassword = etPassword;
+        }
+    }
 
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
     EditText etMail, etPassword, etPassword2, etNamaLengkap, etNoHp, etTglLahir;
     Button btnRegister;
-    String password, password2, nama, mail;
+    String password, password2, nama, mail ,tgllahir, nohp ;
+    DatabaseReference dbRef;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,17 +105,21 @@ public class RegisterPage extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         btnRegister = findViewById(R.id.btn_register);
 
+        user = new User();
+
 //        if (mAuth.getCurrentUser() != null){
 //            startActivity(new Intent(RegisterPage.this, LoginPage.class));
 //            finish();
 //        }
-
+        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 nama = etNamaLengkap.getText().toString().trim();
                 mail = etMail.getText().toString().trim();
+                tgllahir = etTglLahir.getText().toString().trim();
+                nohp = etNoHp.getText().toString().trim();
                 password = etPassword.getText().toString().trim();
                 password2 = etPassword2.getText().toString().trim();
 
@@ -101,8 +159,19 @@ public class RegisterPage extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
+                            user.setEtMail(mail);
+                            user.setEtNamaLengkap(nama);
+                            user.setEtTglLahir(tgllahir);
+                            user.setEtNoHp(nohp);
+                            user.setEtPassword(password);
+
+                            dbRef = FirebaseDatabase.getInstance().getReference().child("User").child("test");
+                            dbRef.setValue(user);
+
                             Toast.makeText(RegisterPage.this, "Registration Succesfull", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.INVISIBLE);
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(RegisterPage.this, "Registration Failed, " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
