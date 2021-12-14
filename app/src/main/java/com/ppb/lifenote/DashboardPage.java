@@ -37,27 +37,6 @@ public class DashboardPage extends AppCompatActivity {
 
     }
 
-    public String TampilTanggal(){
-        DatePickerFragment datePickerFragment = new DatePickerFragment();
-        datePickerFragment.show(getSupportFragmentManager(), "data");
-        datePickerFragment.setOnDateClickListener(new DatePickerFragment.onDateClickListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                String tahun = ""+datePicker.getYear();
-                String bulan = ""+(datePicker.getMonth()+1);
-                String hari = ""+datePicker.getDayOfMonth();
-                tgl = hari+"-"+bulan+"-"+tahun;
-//                Toast.makeText(DashboardPage.this, tgl, Toast.LENGTH_LONG).show();
-                //Intent ke_catatan = new Intent(DashboardPage.this, TambahCatatan.class);
-                //ke_catatan.putExtra("EXTRA_USER", "Dico");
-                //ke_catatan.putExtra("EXTRA_TGL", tgl);
-                //startActivity(ke_catatan);
-                //startActivity(new Intent(DashboardPage.this, TambahCatatan.class));
-            }
-        });
-        return tgl;
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

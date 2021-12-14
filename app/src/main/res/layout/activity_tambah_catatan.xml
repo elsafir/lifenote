@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:orientation="vertical">
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -31,7 +30,6 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/barang"/>
+                android:id="@+id/et_barang"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/pengeluaran"/>
+                android:id="@+id/et_pengeluaran"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/pemasukan"/>
+                android:id="@+id/et_pemasukan"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/keterangan"/>
+                android:id="@+id/et_keterangan"/>
 
 <!--            hide value-->
             <EditText
@@ -95,6 +93,13 @@
                 android:text="+"
                 android:textSize="24sp"
                 android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/yellow"
+                android:id="@+id/btn_kembali_ke_dashboard"
+                android:text="Kembali ke dashboard"/>
 
         </LinearLayout>
     </ScrollView>

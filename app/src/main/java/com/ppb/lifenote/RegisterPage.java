@@ -125,21 +125,26 @@ public class RegisterPage extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(nama)){
                     etNamaLengkap.setError("Nama wajib diisi");
+                    etNamaLengkap.requestFocus();
                     return;
                 }
                 else if (TextUtils.isEmpty(mail)){
                     etMail.setError("Email wajib diisi");
+                    etMail.requestFocus();
                     return;
                 }
                 else if (TextUtils.isEmpty(password)){
                     etPassword.setError("Password wajib diisi");
+                    etPassword.requestFocus();
                     return;
                 }
                 else if (password.length() < 8){
                     etPassword.setError("Panjang password minimal 8 karakter");
+                    etPassword.requestFocus();
                 }
                 else if (!password.equals(password2)){
                     etPassword2.setError("Password tidak sama");
+                    etPassword2.requestFocus();
                 }
                 else{
                     progressBar.setVisibility(View.VISIBLE);
