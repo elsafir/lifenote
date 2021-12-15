@@ -1,4 +1,4 @@
-package com.ppb.lifenote;
+package com.ppb.lifenote.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +18,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.ppb.lifenote.DatePickerFragment;
+import com.ppb.lifenote.R;
 
 public class RegisterPage extends AppCompatActivity {
     public class User{
@@ -184,12 +185,11 @@ public class RegisterPage extends AppCompatActivity {
                             user.setEtNoHp(nohp);
                             user.setEtPassword(password);
 
-                            dbRef = FirebaseDatabase.getInstance().getReference().child(mail.substring(0, mail.indexOf("@")));
+                            dbRef = FirebaseDatabase.getInstance().getReference().child(mail.substring(0, mail.indexOf("@"))).child("profile").push();
                             dbRef.setValue(user);
 
                             Toast.makeText(RegisterPage.this, "Registration Succesfull", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.INVISIBLE);
-
 
                         } else {
                             // If sign in fails, display a message to the user.

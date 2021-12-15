@@ -1,4 +1,4 @@
-package com.ppb.lifenote;
+package com.ppb.lifenote.dataclass;
 
 public class Barang {
     String tanggal, namabarang, pengeluaran, pemasukan, keterangan;

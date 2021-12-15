@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +22,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.ppb.lifenote.activity.LoginPage;
+import com.ppb.lifenote.activity.ProfilePage;
 
 public class TambahCatatan extends AppCompatActivity {
 
@@ -83,9 +84,6 @@ public class TambahCatatan extends AppCompatActivity {
         btnTambahCatatan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(TambahCatatan.this, "text", Toast.LENGTH_LONG).show();
-//                DialogCatatan dialogCatatan = new DialogCatatan();
-//                dialogCatatan.show(getSupportFragmentManager(),"form");
 
                 String Stgl = etTglCatatan.getText().toString();
                 String Sbarang = barang.getText().toString();

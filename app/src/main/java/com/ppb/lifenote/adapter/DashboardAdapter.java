@@ -1,4 +1,4 @@
-package com.ppb.lifenote;
+package com.ppb.lifenote.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,14 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ppb.lifenote.dataclass.Barang;
+import com.ppb.lifenote.R;
+
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<Barang> list;
 
-    public MyAdapter(Context context, ArrayList<Barang> list) {
+    public DashboardAdapter(Context context, ArrayList<Barang> list) {
         this.context = context;
         this.list = list;
     }
@@ -33,11 +36,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         Barang user = list.get(position);
 
-        holder.keterangan.setText("Keterangan :"+user.getKeterangan());
-        holder.namabarang.setText("Nama Barang :"+user.getNamabarang());
-        holder.pemasukan.setText("Pemasukan :Rp. "+user.getPemasukan());
-        holder.pengeluaran.setText("Pengeluaran :Rp. "+user.getPengeluaran());
-        holder.tanggal.setText("Tanggal :"+user.getTanggal());
+        holder.keterangan.setText(user.getKeterangan());
+        holder.namabarang.setText(user.getNamabarang());
+        holder.pemasukan.setText(user.getPemasukan());
+        holder.pengeluaran.setText(user.getPengeluaran());
+        holder.tanggal.setText(user.getTanggal());
     }
 
     @Override

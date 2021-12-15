@@ -20,19 +20,19 @@
             android:name=".TambahCatatan"
             android:exported="false" />
         <activity
-            android:name=".ProfilePage"
+            android:name=".activity.ProfilePage"
             android:exported="false" />
         <activity
             android:name=".DashboardPage"
             android:exported="false" />
         <activity
-            android:name=".RegisterPage"
+            android:name=".activity.RegisterPage"
             android:exported="false" />
         <activity
-            android:name=".LoginPage"
+            android:name=".activity.LoginPage"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
