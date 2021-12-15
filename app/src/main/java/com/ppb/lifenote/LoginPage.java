@@ -20,9 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginPage extends AppCompatActivity {
 
     TextView toRegister;
-    EditText etUsername, etPassword;
+    EditText etEmail, etPassword;
     Button login;
-    String username, password;
+    String mail, password;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -33,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         toRegister = findViewById(R.id.btn_to_page_register);
-        etUsername = findViewById(R.id.et_email);
+        etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
         progressBar = findViewById(R.id.progressbar_login);
         login = findViewById(R.id.btn_login);
@@ -56,15 +56,14 @@ public class LoginPage extends AppCompatActivity {
     }
 
     private void cekLogin() {
-        username = etUsername.getText().toString();
+        mail = etEmail.getText().toString();
         password = etPassword.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(username, password)
+        mAuth.signInWithEmailAndPassword(mail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(LoginPage.this, "Login successfull", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginPage.this, DashboardPage.class));
                         } else {

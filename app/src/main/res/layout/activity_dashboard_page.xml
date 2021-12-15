@@ -7,20 +7,14 @@
     android:background="@drawable/background2"
     tools:context=".DashboardPage">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:id="@+id/rv_item_data"
-                android:layout_height="wrap_content"/>
-
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:id="@+id/rv_item_data"
+        android:layout_height="wrap_content"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"

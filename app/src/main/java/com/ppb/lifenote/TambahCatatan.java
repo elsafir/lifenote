@@ -124,7 +124,7 @@ public class TambahCatatan extends AppCompatActivity {
                     getReference = database.getReference(); // Mendapatkan Referensi dari Database
 
                     //(String tanggal, String namabarang, String pengeluaran, String pemasukan, String keterangan
-                    getReference.child(getUserID.substring(0, getUserID.indexOf("@"))).child("barang"+hitungBarang).push()
+                    getReference.child(getUserID.substring(0, getUserID.indexOf("@"))).child("barang").push()
                             .setValue(new data_catatan(Stgl, Sbarang, Spengeluaran, Spemasukan, Sketerangan))
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
