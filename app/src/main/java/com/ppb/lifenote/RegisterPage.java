@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -105,12 +106,25 @@ public class RegisterPage extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         btnRegister = findViewById(R.id.btn_register);
 
+        etTglLahir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerFragment datePickerFragment = new DatePickerFragment();
+                datePickerFragment.show(getSupportFragmentManager(), "data");
+                datePickerFragment.setOnDateClickListener(new DatePickerFragment.onDateClickListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        String tahun = ""+datePicker.getYear();
+                        String bulan = ""+(datePicker.getMonth()+1);
+                        String hari = ""+datePicker.getDayOfMonth();
+                        String tgl = hari+"-"+bulan+"-"+tahun;
+                        etTglLahir.setText(tgl);
+                    }
+                });
+            }
+        });
         user = new User();
 
-//        if (mAuth.getCurrentUser() != null){
-//            startActivity(new Intent(RegisterPage.this, LoginPage.class));
-//            finish();
-//        }
         dbRef = FirebaseDatabase.getInstance().getReference();
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

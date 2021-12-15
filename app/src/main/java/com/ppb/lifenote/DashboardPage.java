@@ -72,29 +72,8 @@ public class DashboardPage extends AppCompatActivity {
                     Barang barang = dataSnapshot.getValue(Barang.class);
                     list.add(barang);
 
-
                 }
                 myAdapter.notifyDataSetChanged();
-                //Inisialisasi ArrayList
-//                list = new ArrayList<>();
-//
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                    //Mapping data pada DataSnapshot ke dalam objek mahasiswa
-//                    Barang barang = dataSnapshot.getValue(Barang.class);
-//
-//                    //Mengambil Primary Key, digunakan untuk proses Update dan Delete
-////                    barang.setKey(dataSnapshot.getKey());
-//                    list.add(barang);
-//                }
-//
-//                //Inisialisasi Adapter dan data Mahasiswa dalam bentuk Array
-//                //adapter = new RecyclerViewAdapter(list, DashboardPage.this);
-//
-//                myAdapter = new MyAdapter(DashboardPage.this,list);
-//
-//                //Memasang Adapter pada RecyclerView
-//                recyclerView.setAdapter(adapter);
-
             }
 
             @Override
