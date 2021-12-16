@@ -61,17 +61,4 @@ public class ProfileAdapter  extends RecyclerView.Adapter<ProfileAdapter.MyViewH
         }
     }
 
-//    public static class MyViewHolder extends RecyclerView.ViewHolder{
-//
-//        TextView nama, email, notelp, tglLahir;
-//
-//        public MyViewHolder(@NonNull View itemView){
-//            super(itemView);
-//
-//            nama = itemView.findViewById(R.id.tv_temp_name);
-//            email = itemView.findViewById(R.id.tv_email);
-//            notelp = itemView.findViewById(R.id.tv_no_hp);
-//            tglLahir = itemView.findViewById(R.id.tv_tgl_lahir);
-//        };
-//    }
 }

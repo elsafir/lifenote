@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        tools:layout_editor_absoluteX="134dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,18 +54,18 @@
             <EditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
-                android:inputType="textPassword"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
 
             <Button
-                style="@style/buttonstyle1"
                 android:id="@+id/btn_login"
+                style="@style/buttonstyle1"
                 android:layout_width="256dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="32dp"
-                android:text="Log In"
-                android:backgroundTint="@color/teal_700"/>
+                android:backgroundTint="@color/teal_700"
+                android:text="Log In" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,13 +90,13 @@
             </LinearLayout>
 
             <ProgressBar
-                android:layout_marginTop="32dp"
-                android:layout_gravity="center_horizontal"
                 android:id="@+id/progressbar_login"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:visibility="invisible" />
         </LinearLayout>
     </ScrollView>
 

@@ -1,4 +1,4 @@
-package com.ppb.lifenote;
+package com.ppb.lifenote.dataclass;
 
 public class data_catatan {
     private String key, tanggal, namabarang, pengeluaran, pemasukan, keterangan;

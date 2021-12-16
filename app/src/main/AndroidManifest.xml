@@ -17,13 +17,13 @@
             android:name=".MyListData"
             android:exported="false" />
         <activity
-            android:name=".TambahCatatan"
+            android:name=".activity.TambahCatatan"
             android:exported="false" />
         <activity
             android:name=".activity.ProfilePage"
             android:exported="false" />
         <activity
-            android:name=".DashboardPage"
+            android:name=".activity.DashboardPage"
             android:exported="false" />
         <activity
             android:name=".activity.RegisterPage"

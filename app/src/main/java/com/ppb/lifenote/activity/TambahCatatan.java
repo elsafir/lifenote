@@ -1,4 +1,4 @@
-package com.ppb.lifenote;
+package com.ppb.lifenote.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +22,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.ppb.lifenote.activity.LoginPage;
-import com.ppb.lifenote.activity.ProfilePage;
+import com.ppb.lifenote.DatePickerFragment;
+import com.ppb.lifenote.R;
+import com.ppb.lifenote.dataclass.data_catatan;
 
 public class TambahCatatan extends AppCompatActivity {
 

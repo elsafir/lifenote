@@ -33,15 +33,16 @@
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.05"
                 android:layout_height="wrap_content"
                 android:text=" : "/>
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="0.25"
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
                 android:layout_height="wrap_content"
                 android:text="tv_namabarang"
                 android:id="@+id/tv_namabarang"/>
@@ -58,14 +59,16 @@
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.05"
                 android:layout_height="wrap_content"
                 android:text=" : "/>
 
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.75"
                 android:layout_height="wrap_content"
                 android:text="tv_tanggal"
                 android:id="@+id/tv_tanggal"/>
@@ -82,7 +85,8 @@
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.05"
                 android:layout_height="wrap_content"
                 android:text=" : "/>
 
@@ -90,7 +94,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
+                android:layout_weight="0.75"
                 android:layout_height="wrap_content"
                 android:text="tv_pengeluaran"
                 android:id="@+id/tv_pengeluaran"/>
@@ -107,7 +111,8 @@
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.05"
                 android:layout_height="wrap_content"
                 android:text=" : "/>
 
@@ -115,7 +120,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
+                android:layout_weight="0.75"
                 android:layout_height="wrap_content"
                 android:text="tv_pemasukan"
                 android:id="@+id/tv_pemasukan"/>
@@ -132,7 +137,8 @@
             <TextView
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="0.05"
                 android:layout_height="wrap_content"
                 android:text=" : "/>
 
@@ -140,7 +146,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_width="0dp"
-                android:layout_weight="0.25"
+                android:layout_weight="0.75"
                 android:layout_height="wrap_content"
                 android:text="tv_keterangan"
                 android:id="@+id/tv_keterangan"/>
