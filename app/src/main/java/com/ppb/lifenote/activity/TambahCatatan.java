@@ -14,14 +14,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ppb.lifenote.DatePickerFragment;
 import com.ppb.lifenote.R;
 import com.ppb.lifenote.dataclass.data_catatan;
@@ -79,7 +83,7 @@ public class TambahCatatan extends AppCompatActivity {
             }
         });
 
-        user = findViewById(R.id.et_user);
+//        user = findViewById(R.id.et_user);
         btnTambahCatatan = findViewById(R.id.btn_submit_form_catatan);
 
         btnTambahCatatan.setOnClickListener(new View.OnClickListener() {
@@ -146,7 +150,6 @@ public class TambahCatatan extends AppCompatActivity {
                             Toast.makeText(TambahCatatan.this, "Data Gagal Disimpan", Toast.LENGTH_SHORT).show();
                         }
                     });
-                    hitungBarang++;
                 }
             }
         });

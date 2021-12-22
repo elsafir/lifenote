@@ -18,6 +18,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
 
     Context context;
     ArrayList<Barang> list;
+    int saldo;
 
     public DashboardAdapter(Context context, ArrayList<Barang> list) {
         this.context = context;
@@ -38,9 +39,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
 
         holder.keterangan.setText(user.getKeterangan());
         holder.namabarang.setText(user.getNamabarang());
-        holder.pemasukan.setText(user.getPemasukan());
-        holder.pengeluaran.setText(user.getPengeluaran());
+        holder.pemasukan.setText("Pemasukan \n"+user.getPemasukan());
+        holder.pengeluaran.setText("Pengeluaran \n"+user.getPengeluaran());
         holder.tanggal.setText(user.getTanggal());
+
+        int temp_saldo = Integer.parseInt(user.getPemasukan()) - Integer.parseInt(user.getPengeluaran());
+        saldo += temp_saldo;
+        holder.tvSaldoAkhir.setText("Saldo: \n"+saldo);
     }
 
     @Override
@@ -50,11 +55,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tanggal, namabarang, pengeluaran, pemasukan, keterangan;
+//        saldo = (saldo)
+
+        TextView tanggal, namabarang, pengeluaran, pemasukan, keterangan, tvSaldoAkhir;
 
         public MyViewHolder(@NonNull View itemView){
             super(itemView);
 
+            tvSaldoAkhir = itemView.findViewById(R.id.tv_saldo_akhir);
             tanggal = itemView.findViewById(R.id.tv_tanggal);
             namabarang = itemView.findViewById(R.id.tv_namabarang);
             pengeluaran = itemView.findViewById(R.id.tv_pengeluaran);

@@ -78,13 +78,6 @@
                 android:inputType="text"
                 android:id="@+id/et_keterangan"/>
 
-<!--            hide value-->
-            <EditText
-                android:id="@+id/et_user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"/>
-<!--            batas hide value-->
             <Button
                 android:id="@+id/btn_submit_form_catatan"
                 android:layout_width="wrap_content"

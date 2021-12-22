@@ -10,6 +10,8 @@
     <color name="merah_jambu">#FFC0CB</color>
     <color name="red">#FF0000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
     <color name="custom2">#179283</color>
     <color name="custom3">#e38b61</color>
 </resources>
