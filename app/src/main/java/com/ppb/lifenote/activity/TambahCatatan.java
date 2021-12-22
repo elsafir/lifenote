@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,24 +22,37 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.ppb.lifenote.DatePickerFragment;
 import com.ppb.lifenote.R;
 import com.ppb.lifenote.dataclass.data_catatan;
 
 public class TambahCatatan extends AppCompatActivity {
 
-//    public static final String TAG = "TambahCatatan";
-
-    private EditText user, etTglCatatan, barang, pengeluaran, pemasukan, keterangan;
+    private EditText nominal, etTglCatatan, barang, pengeluaran, pemasukan, keterangan;
     private Button btnTambahCatatan;
     private TextView btnKeDashboard;
     private FirebaseAuth auth;
-    int hitungBarang = 1;
+    String jenisTransaksi = null;
+    RadioGroup radioGroup;
+    String Spengeluaran = "", Spemasukan = "";
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.rb_pengeluaran:
+                jenisTransaksi = "pengeluaran";
+                break;
+            case R.id.rb_pemasukan:
+                jenisTransaksi = "pemasukan";
+                break;
+        }
+//        Toast.makeText(TambahCatatan.this, "Jenis transaksi: "+jenisTransaksi, Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +61,9 @@ public class TambahCatatan extends AppCompatActivity {
 
         etTglCatatan = findViewById(R.id.et_tgl_catatan);
         barang = findViewById(R.id.et_barang);
-        pengeluaran = findViewById(R.id.et_pengeluaran);
-        pemasukan = findViewById(R.id.et_pemasukan);
         keterangan = findViewById(R.id.et_keterangan);
+        radioGroup = findViewById(R.id.jenis_transaksi);
+        nominal = findViewById(R.id.et_nominal);
 
         btnKeDashboard = findViewById(R.id.btn_kembali_ke_dashboard);
         btnKeDashboard.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +74,6 @@ public class TambahCatatan extends AppCompatActivity {
         });
 
         barang.clearFocus();
-        pengeluaran.clearFocus();
-        pemasukan.clearFocus();
         keterangan.clearFocus();
 
         etTglCatatan = findViewById(R.id.et_tgl_catatan);
@@ -92,9 +104,8 @@ public class TambahCatatan extends AppCompatActivity {
 
                 String Stgl = etTglCatatan.getText().toString();
                 String Sbarang = barang.getText().toString();
-                String Spengeluaran = pengeluaran.getText().toString();
-                String Spemasukan = pemasukan.getText().toString();
                 String Sketerangan = keterangan.getText().toString();
+                String Snominal = nominal.getText().toString();
 
                 if (TextUtils.isEmpty(Stgl)){
                     etTglCatatan.setError("Tanggal Harus Diisi");
@@ -104,19 +115,27 @@ public class TambahCatatan extends AppCompatActivity {
                     barang.setError("Nama Barang Harus Diisi");
                     barang.requestFocus();
                 }
-                else if (TextUtils.isEmpty(Spengeluaran)){
-                    pengeluaran.setError("Pengeluaran Harus Diisi");
-                    pengeluaran.requestFocus();
-                }
-                else if (TextUtils.isEmpty(Spemasukan)){
-                    pemasukan.setError("Pemasukan Harus Diisi");
-                    pemasukan.requestFocus();
+                else if (jenisTransaksi == null){
+                    Toast.makeText(TambahCatatan.this, "Jenis transaksi harus diisi", Toast.LENGTH_LONG).show();
                 }
                 else if (TextUtils.isEmpty(Sketerangan)){
                     keterangan.setError("keterangan Harus Diisi");
                     keterangan.requestFocus();
                 }
+                else if (TextUtils.isEmpty(Snominal)){
+                    nominal.setError("Nominal "+jenisTransaksi+" harus diisi.");
+                    nominal.requestFocus();
+                }
                 else{
+                    // mendapatkan nominal dari inputan user
+                    if (jenisTransaksi == "pemasukan"){
+                        Spemasukan = nominal.getText().toString();
+                        Spengeluaran = "0";
+                    }
+                    else{
+                        Spengeluaran = nominal.getText().toString();
+                        Spemasukan = "0";
+                    }
                     //Mendapatkan UserID dari pengguna yang Terautentikasi
                     auth = FirebaseAuth.getInstance();
                     String getUserID = auth.getCurrentUser().getEmail();
@@ -134,8 +153,7 @@ public class TambahCatatan extends AppCompatActivity {
                                 public void onSuccess(Void unused) {
                                     etTglCatatan.setText("");
                                     barang.setText("");
-                                    pengeluaran.setText("");
-                                    pemasukan.setText("");
+                                    nominal.setText("");
                                     keterangan.setText("");
                                     Toast.makeText(TambahCatatan.this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show();
                                 }
@@ -144,8 +162,7 @@ public class TambahCatatan extends AppCompatActivity {
                         public void onFailure(@NonNull Exception e) {
                             etTglCatatan.setText(Stgl);
                             barang.setText(Sbarang);
-                            pengeluaran.setText(Spengeluaran);
-                            pemasukan.setText(Spemasukan);
+                            nominal.setText(Snominal);
                             keterangan.setText(Sketerangan);
                             Toast.makeText(TambahCatatan.this, "Data Gagal Disimpan", Toast.LENGTH_SHORT).show();
                         }

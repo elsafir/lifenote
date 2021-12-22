@@ -50,24 +50,16 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:id="@+id/et_barang"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pengeluaran"/>
+                android:text="Nominal"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/et_pengeluaran"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pemasukan"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/et_pemasukan"/>
+                android:id="@+id/et_nominal"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,6 +69,29 @@
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:id="@+id/et_keterangan"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jenis transaksi"/>
+
+            <RadioGroup
+                android:id="@+id/jenis_transaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/rb_pengeluaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Pengeluaran"/>
+                <RadioButton
+                    android:id="@+id/rb_pemasukan"
+                    android:layout_width="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_height="wrap_content"
+                    android:text="Pemasukan"/>
+            </RadioGroup>
 
             <Button
                 android:id="@+id/btn_submit_form_catatan"
